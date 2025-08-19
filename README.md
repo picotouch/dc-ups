@@ -25,15 +25,17 @@ I plan to use it to power a Dell Optiplex Micro/similar or SBC with Home Assista
 
 
 ## Block diagram:
-<img width="75%" height="auto" alt="block_diagram" src="https://github.com/user-attachments/assets/7657dd56-ba92-4272-aa33-60609256cb3b" />
 <br/><br/> 
+<img width="75%" height="auto" alt="block_diagram" src="https://github.com/user-attachments/assets/7657dd56-ba92-4272-aa33-60609256cb3b" />
+<br/><br/>
+
 
 
 ## System components:
 - main control PCB (DIYUPS3)
 - DC/DC buck-boost converter, (pre-made module), up to 3
 - battery charger module, (pre-made module)
-- lead acid battery
+- SLA/VRLA battery
 - metal enclosure
 - 3D printed front/rear panel
 - 3D printed PCBs holders
