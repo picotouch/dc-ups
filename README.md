@@ -2,28 +2,12 @@
 
 
 ## Introducion
-
 I've been working on a DC DIY UPS solution for some time now because I couldn't find a device on the market that does exactly what I need: multiple different DC outputs, user configured settings, no multiple voltage conversion (AC→DC, DC→AC, AC→DC), compact size, etc...
 
 This DC DIY UPS can simultaneously provide a different voltage on each of the outputs (for example, 5V for Raspberry Pi, 12V for switch and 15V/19V for router or mini-PC).
 
 I plan to use it to power a Dell Optiplex Micro/similar or SBC with Home Assistant, router and switch, to provide uninterrupted power to the entire  system.
-
-This is some text.
-
-
-
-
-
-
-# This is a heading
-
-
-
-
-
-
-  
+<br/><br/> 
   
 
 ## Features:
@@ -37,12 +21,12 @@ This is some text.
 - 12 V lead-acid batteries (7–9 Ah), as in classic UPS systems
 - Fanless operation      
 - Compact dimensions
-
+<br/><br/> 
 
 
 ## Block diagram:
 <img width="75%" height="auto" alt="block_diagram" src="https://github.com/user-attachments/assets/7657dd56-ba92-4272-aa33-60609256cb3b" />
-
+<br/><br/> 
 
 
 ## System components:
