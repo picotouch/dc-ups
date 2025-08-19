@@ -2,11 +2,14 @@
 
 
 ## Introducion
-I've been working on a DC DIY UPS solution for some time now because I couldn't find a device on the market that does exactly what I need: multiple different DC outputs, user configured settings, no multiple voltage conversion (AC→DC, DC→AC, AC→DC), compact size, etc...
+I've been working on a DC DIY UPS solution for some time now because I couldn't find a device on the market that does exactly what I need:
+multiple different DC outputs, user configured settings, no multiple voltage conversion (AC→DC, DC→AC, AC→DC), compact size, etc...
 
-This DC DIY UPS can simultaneously provide a different voltage on each of the outputs (for example, 5V for Raspberry Pi, 12V for switch and 15V/19V for router or mini-PC).
+This DC DIY UPS can simultaneously provide a different voltage on each of the outputs (for example, 5V for Raspberry Pi, 12V for switch
+and 15V/19V for router or mini-PC).
 
-I plan to use it to power a Dell Optiplex Micro/similar or SBC with Home Assistant, router and switch, to provide uninterrupted power to the entire  system.
+I plan to use it to power a Dell Optiplex Micro/similar or SBC with Home Assistant, router and switch, to provide uninterrupted power
+to the entire  system.
 <br/><br/> 
   
 
@@ -40,4 +43,30 @@ I plan to use it to power a Dell Optiplex Micro/similar or SBC with Home Assista
 - 3D printed front/rear panel
 - 3D printed PCBs holders
 - connectors for DC inputs/outputs, communication/configuration(COM port)
-- AC/DC power supply (e.g. Notebook power adapter) 
+- AC/DC power supply (e.g. Notebook power adapter)
+<br/><br/> 
+
+
+## Description of system components:
+- DIYUPS3
+
+This is the main PCB, which accepts an external DC power supply (via an AC/DC adapter) and provides power to the DC/DC converters.
+Power is sourced either from the external supply (AC mains present – normal operation) or from the battery (when AC mains is absent).
+An ideal diode controller with the corresponding MOSFET (Active OR’ing redundant power supply) ensures seamless switching between sources.
+
+The DC/DC converters generate the regulated DC outputs for connected devices.
+
+
+The PCB includes:
+- Screw terminals for both the DC input voltage and the battery connection, each protected by fuses.
+- Mini Blade fuses on all DC/DC output rails for additional protection.
+- Spring terminal block connectors for attaching the DC/DC converter modules.
+
+<br/><br/> 
+Additionally, there is a pin header connector that provides:
+- USB pins for device communication/configuration
+- Control pins for enabling/disabling the DC/DC converters (ON/OFF)
+
+<br/><br/> 
+System management, control, and monitoring are handled by an ATtiny1614 microcontroller.
+<br/><br/> 
