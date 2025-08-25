@@ -157,36 +157,32 @@ Always choose a power supply rated above the expected load. The output connector
 
 ###  -  Software:
 
-| Command    | Description                     | Range(x)       | Default value                 | Test value                   | Return message                                      |
-|:-----------|:--------------------------------|:--------------:|:-----------------------------:|:----------------------------:|:---------------------------------------------------:|
-| `<r0>`       | Read0; read common settings     |                | vM:1,cA:100,pN:0,bP:150 | vM:1,cA:100,pN:1,bP:150 | {"vM":1,"cA":100,"pN":0,"bP":150}                |
-| `<vM:x>`    | vM; voltageMonitor               | 0-1            | 1                             | 1                            |                                                    |
-| `<cA:x>`    | cA; calibrAtion                  | 80-120         | 100                           | 100                          |                                                    |
-| `<pN:x>`    | pN; printNotes                   | 0-1            | 0                             | 1                            |                                                    |
-| `<bP:x>`    | bP; battery protection           | 0/148-154      | 150                           | 150                          |                                                    |
-| &nbsp;  | &nbsp;      | &nbsp;   | &nbsp;        | &nbsp;     | &nbsp;         |
-
-| `<r1>`       | Read1; read DC/DC-1 settings    |                | tB1: 300<br>tS1: 300<br>vH1: 125<br>vL1: 110 | tB1: 10<br>tS1: 10<br>vH1: 110<br>vL1: 105 | {"tB1":300,"tS1":300,"vH1":125,"vL1":110}        |
-| `<tB1:x>`   | tB1; timeBOOT1                   | 1-900          | 300                           | 10                           |                                                    |
-| `<tS1:x>`   | tS1; timeSHDWN1                  | 1-900          | 300                           | 10                           |                                                    |
-| `<vH1:x>`   | vH1; volt.High1                  | 100-130        | 125                           | 110                          |                                                    |
-| `<vL1:x>`   | vL1; volt.Low1                   | 100-130        | 110                           | 105                          |                                                    |
-| &nbsp;  | &nbsp;      | &nbsp;   | &nbsp;        | &nbsp;     | &nbsp;         |
-
-| `<r2>`       | Read2; read DC/DC-2 settings    |                | tB2: 1<br>tS2: 1<br>vH2: 125<br>vL2: 110 | tB2: 10<br>tS2: 10<br>vH2: 120<br>vL2: 115 | {"tB2":1,"tS2":1,"vH2":125,"vL2":110}            |
-| `<tB2:x>`   | tB2; timeBOOT2                   | 1-900          | 1                             | 10                           |                                                    |
-| `<tS2:x>`   | tS2; timeSHDWN2                  | 1-900          | 1                             | 10                           |                                                    |
-| `<vH2:x>`   | vH2; volt.High2                  | 100-130        | 125                           | 120                          |                                                    |
-| `<vL2:x>`   | vL2; volt.Low2                   | 100-130        | 110                           | 115                          |                                                    |
-| &nbsp;  | &nbsp;      | &nbsp;   | &nbsp;        | &nbsp;     | &nbsp;         |
-
-| `<r3>`       | Read3; read DC/DC-3 settings    |                | tB3: 600<br>tS3: 600<br>vH3: 125<br>vL3: 110 | tB3: 10<br>tS3: 10<br>vH3: 130<br>vL3: 125 | {"tB3":600,"tS3":600,"vH3":125,"vL3":110}        |
-| `<tB3:x>`   | tB3; timeBOOT3                   | 1-900          | 600                           | 10                           |                                                    |
-| `<tS3:x>`   | tS3; timeSHDWN3                  | 1-900          | 600                           | 10                           |                                                    |
-| `<vH3:x>`   | vH3; volt.High3                  | 100-130        | 125                           | 130                          |                                                    |
-| `<vL3:x>`   | vL3; volt.Low3                   | 100-130        | 110                           | 125                          |                                                    |
-| &nbsp;  | &nbsp;      | &nbsp;   | &nbsp;        | &nbsp;     | &nbsp;         |
-
-| `<reset>`    | Reset all to default             |                |                               |                              |                                                    |
-| `<test1>`    | Set all to test values           |                |                               |                              |                                                    |
-| `<ver>`      | Software version                 |                |                               |                              | {"ver:2.3"}                                       |
+| Command   | Description                     | Range(x)       | Default value                       | Test value                          | Return message(default)                                     |
+|:----------|:--------------------------------|:--------------:|:-----------------------------------:|:-----------------------------------:|:---------------------------------------------------:|
+| `<r0>`    | Read0; read common settings     |                |            |           | {"vM":1,"cA":100,"pN":0,"bP":150}                |
+| `<vM:x>`  | vM; voltageMonitor              | 0-1            | 1                                   | 1                                   |                                                    |
+| `<cA:x>`  | cA; calibrAtion                 | 80-120         | 100                                 | 100                                 |                                                    |
+| `<pN:x>`  | pN; printNotes                  | 0-1            | 0                                   | 1                                   |                                                    |
+| `<bP:x>`  | bP; battery protection          | 0/148-154      | 150                                 | 150                                 |                                                    |
+| &nbsp;    | &nbsp;                          | &nbsp;         | &nbsp;                              | &nbsp;                              | &nbsp;                                             |
+| `<r1>`    | Read1; read DC/DC-1 settings    |                |    |     | {"tB1":300,"tS1":300,"vH1":125,"vL1":110}        |
+| `<tB1:x>` | tB1; timeBOOT1                  | 1-900          | 300                                 | 10                                  |                                                    |
+| `<tS1:x>` | tS1; timeSHDWN1                 | 1-900          | 300                                 | 10                                  |                                                    |
+| `<vH1:x>` | vH1; volt.High1                 | 100-130        | 125                                 | 110                                 |                                                    |
+| `<vL1:x>` | vL1; volt.Low1                  | 100-130        | 110                                 | 105                                 |                                                    |
+| &nbsp;    | &nbsp;                          | &nbsp;         | &nbsp;                              | &nbsp;                              | &nbsp;                                             |
+| `<r2>`    | Read2; read DC/DC-2 settings    |                |       |      | {"tB2":1,"tS2":1,"vH2":125,"vL2":110}            |
+| `<tB2:x>` | tB2; timeBOOT2                  | 1-900          | 1                                   | 10                                  |                                                    |
+| `<tS2:x>` | tS2; timeSHDWN2                 | 1-900          | 1                                   | 10                                  |                                                    |
+| `<vH2:x>` | vH2; volt.High2                 | 100-130        | 125                                 | 120                                 |                                                    |
+| `<vL2:x>` | vL2; volt.Low2                  | 100-130        | 110                                 | 115                                 |                                                    |
+| &nbsp;    | &nbsp;                          | &nbsp;         | &nbsp;                              | &nbsp;                              | &nbsp;                                             |
+| `<r3>`    | Read3; read DC/DC-3 settings    |                |   |     | {"tB3":600,"tS3":600,"vH3":125,"vL3":110}        |
+| `<tB3:x>` | tB3; timeBOOT3                  | 1-900          | 600                                 | 10                                  |                                                    |
+| `<tS3:x>` | tS3; timeSHDWN3                 | 1-900          | 600                                 | 10                                  |                                                    |
+| `<vH3:x>` | vH3; volt.High3                 | 100-130        | 125                                 | 130                                 |                                                    |
+| `<vL3:x>` | vL3; volt.Low3                  | 100-130        | 110                                 | 125                                 |                                                    |
+| &nbsp;    | &nbsp;                          | &nbsp;         | &nbsp;                              | &nbsp;                              | &nbsp;                                             |
+| `<reset>` | Reset all to default            |                |                                     |                                     |                                                    |
+| `<test1>` | Set all to test values          |                |                                     |                                     |                                                    |
+| `<ver>`   | Software version                |                |                                     |                                     | {"ver:2.3"}                                       |
