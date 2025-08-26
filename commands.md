@@ -1,4 +1,4 @@
-### Software:
+## Software:
 
 | Command   | Description                     | Range(x)       | Default value                       | Test value                          | Return message(default)                                     |
 |:----------|:--------------------------------|:--------------:|:-----------------------------------:|:-----------------------------------:|:---------------------------------------------------:|
@@ -32,11 +32,12 @@
 
 <br/><br/> 
 <br/><br/> 
-### `<r0>`    -    common settings description:
+## `<r0>`    -    common settings description:
 
 #### - pN = 1 (printNotes, 0=disable, 1=enable)
 
 When pN (printNotes) is enabled, the following messages are sent via USB:
+<br/><br/>
 
 - When vH1 set voltage is reached:
 
@@ -57,41 +58,49 @@ Voltage monitoring resumes, waiting for the set value vL1.
 <br/><br/> 
 
 - When the set voltage vL1 is reached:
+
 ```
 “vL1 detected, stop monitoring”
 “Sending command for shutdown via USB...”
 “start countdown tS1 timer”
 ```
-
 Additionally, a JSON message is sent (this is always sent, independent of pN):
+
 ```
 {"DC1OFF": true}
 ```
+
 This indicates that the tS1 countdown has started. When it expires, DC/DC-1 will be turned OFF.
 The JSON message can be used in Node-RED, for example, to trigger a NAS shutdown command.
 <br/><br/>
 
 - When the set time tS1 expires:
+
 ```
 “Expired tS1 timer, DC/DC 1 OFF, waiting…”
 ```
+
 DC/DC-1 is now OFF and waits for the next cycle.
       
 ```
 “Start vH1 monitoring…”
 ```
 <br/><br/>
-<br/><br/>
-
 
 #### - bP = 0/148-154 (batteryProtection, 0=disable, 148-154=enable)
-
-If bP is enabled, when battery voltage reach set value, JSON message {„BOVP”:true} will be sent. After 2sec, all DC/DC will be OFF.
-To reset DOCzilla, it is necessary to disconnect the battery and DC power supply at the same time.
+If bP is enabled, when battery voltage reach set value, JSON message **{„BOVP”:true}** will be sent. After 2sec, all DC/DC will be OFF.\
+To reset DOCzilla, it is necessary to disconnect the battery and DC power supply at the same time.\
 This is planned to be changed so that the reset is done via the reset button.
+<br/><br/> 
 
 #### - cA = 80-120 (calibrAtion, 105 is 1.05)
-Used to set the battery voltage level display, sent as a JSON message: {"bV":12.455}.
+Used to set the battery voltage level display, sent as a JSON message:
+
+```
+{"bV":12.455}
+```
+<br/><br/>
 
 #### - vM = 0/1 (voltageMonitor, 0=disable, 1=enable (interval 500mS) )
 Enable or disable sending JSON (  {"bV":12.455} ) battery voltage messages via USB.
+<br/><br/> 
