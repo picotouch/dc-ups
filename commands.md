@@ -1,4 +1,4 @@
-###    Software:
+### Software:
 
 | Command   | Description                     | Range(x)       | Default value                       | Test value                          | Return message(default)                                     |
 |:----------|:--------------------------------|:--------------:|:-----------------------------------:|:-----------------------------------:|:---------------------------------------------------:|
@@ -32,8 +32,8 @@
 
 <br/><br/> 
 <br/><br/> 
-###    `<r0>`    -    common settings description
-<br/><br/> 
+### `<r0>`    -    common settings description:
+
 #### - pN = 1 (printNotes, 0=disable, 1=enable)
 
 When pN (printNotes) is enabled, the following messages are sent via USB:
